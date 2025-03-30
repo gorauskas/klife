@@ -22,7 +22,9 @@ fun main() {
     val elapsed2: Duration = measureTime {
         for (frame in buffer) {
             println(frame)
-            TimeUnit.MILLISECONDS.sleep(36)
+            TimeUnit.MILLISECONDS.sleep(144)
+            println("\u001b[2J\u001b[H")
+            System.out.flush()
         }
     }
     println("\n BUFFERING! $elapsed1")
