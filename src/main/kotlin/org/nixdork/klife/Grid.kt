@@ -10,12 +10,11 @@ val Grid.width: Int get() = this.keys.maxOf { it.second + 1 }
 val Grid.height: Int get() = this.keys.maxOf { it.first + 1 }
 
 fun Grid.display(): String =
-    keys.map { cell ->
+    keys.joinToString("") { cell ->
         (if (isAliveAt(cell)) "#" else ".").let {
             if (cell.second >= width - 1) it + "\n" else it
         }
-    }.joinToString("")
-        .dropLast(1)
+    }.dropLast(1)
 
 fun Grid.isAliveAt(cell: Cell): Boolean = this[cell] == true
 
@@ -31,5 +30,4 @@ fun Grid.rangeConstraint(row: Int, col: Int) {
     check(col in 0 until this.width)
 }
 
-inline fun Grid.generation(fn: (cell: Cell) -> Boolean): Grid =
-    keys.map { it to fn(it) }.toMap()
+inline fun Grid.generation(fn: (cell: Cell) -> Boolean): Grid = keys.associateWith { fn(it) }
