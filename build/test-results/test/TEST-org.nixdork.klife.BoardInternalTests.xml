@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.nixdork.klife.BoardInternalTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-30T23:57:37" hostname="cockfosters" time="0.023">
-  <properties/>
-  <testcase name="live neighbors count may be 1 or 0" classname="org.nixdork.klife.BoardInternalTests" time="0.019"/>
-  <testcase name="live neighbors count should be 0" classname="org.nixdork.klife.BoardInternalTests" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
